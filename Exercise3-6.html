@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 3.6</title>
+  </head>
+  
+  <body>
+  
+    <h1>Registration Form</h1>
+    <form method="post" action="http://www.deitel.com">
+      <input type="hidden" name="recipient" 
+      value="deitel@deitel.com">
+      <input type="hidden" name="Subject" 
+      value="Exercise 2.16">
+      <input type="hidden" name="redirect" 
+      value="google.com">
+      <p>
+        <label>First Name:
+          <input name="fname" type="text" size="12.5" maxlength="15" required>
+        </label>
+      </p>
+      <p>
+        <label>Last Name:
+          <input name="lname" type="text" maxlength="20" required>
+        </label>
+      </p>
+      <p>
+        <label>E-mail Address:
+          <input name="email" type="text" size="25" required>
+        </label>
+      </p>
+      <p>
+        <details>
+          <summary>Optional</summary>
+          <label>Year of College:
+            <input name="colyear" type="text" size="20">
+          </label>
+        </details>
+      </p>
+      <p>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+      </p>
+    </form>
+    
+  </body>
+  
+</html>
