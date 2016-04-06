@@ -19,5 +19,9 @@ div:hover {
 }
 
 div:hover a {
-  color:hotpink;
+  color: hotpink;
+}
+
+div:hover a:visited {
+  color: #ceaeb4;
 }
