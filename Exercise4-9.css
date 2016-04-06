@@ -6,12 +6,18 @@ div {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
-  color: blue;
+}
+
+div a {
+  color:blue;
 }
 
 div:hover {
   border-style: inset;
   background-image: url(http://49.media.tumblr.com/tumblr_m8syifUdOn1r3kpv0o1_500.gif);
   background-size: cover;
-  color: hotpink;
+}
+
+div:hover a {
+  color:hotpink;
 }
