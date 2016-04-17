@@ -16,27 +16,33 @@
             font-size: 250%;
             border: 3px solid DarkGreen;
             border-radius:15px;
-            -webkit-animation: skew 3s infinite alternate;
-            -moz-animation: skew 3s infinite alternate;
-            animation: skew 3s infinite alternate;
+            -webkit-animation: skew 3s infinite linear;
+            -moz-animation: skew 3s infinite linear;
+            animation: skew 3s infinite linear;
          }
          @-webkit-keyframes skew 
          {
-            from { transform: skewY(30deg); }
-            50% { transform: skewX(0deg); }
-            to { transform: skewX(30deg); }
+            from { -webkit-transform: skewX(0deg); }
+            25% { -webkit-transform: skewY(30deg); }
+            50% { -webkit-transform: skewX(0); }
+            75% { -webkit-transform: skewX(30deg); }
+            to { -webkit-transform: skewX(0); }
          }
          @-moz-keyframes skew 
          {
-            from { transform: skewY(30deg); }
-            50% { transform: skewX(0deg); }
-            to { transform: skewX(30deg); }
+            from { -moz-transform: skewX(0deg); }
+            25% { -moz-transform: skewY(30deg); }
+            50% { -moz-transform: skewX(0); }
+            75% { -moz-transform: skewX(30deg); }
+            to { -moz-transform: skewX(0); }
          }
          @-keyframes skew 
          {
-            from { transform: skewY(30deg); }
-            50% { transform: skewX(0deg); }
-            to { transform: skewX(30deg); }
+            from { transform: skewX(0deg); }
+            25% { transform: skewY(30deg); }
+            50% { transform: skewX(0); }
+            75% { transform: skewX(30deg); }
+            to { transform: skewX(0); }
          }
       </style>
    </head>
