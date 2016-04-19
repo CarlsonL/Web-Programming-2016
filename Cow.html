@@ -34,7 +34,8 @@ function Cow() {
         var yrlyCowPrice = yrlySeedCost + yrlyWtrCost + yrlyPwrCost;
         var totalCowPrice = yrlyCowPrice * numCows;
 
-        document.getElementById("output").innerHTML = "It will cost you $" + totalCowPrice + " to take care of " + numCows + " cows for a year.\n Amount spent per cow: $" + yrlyCowPrice + "\n Amount spent on seeds: $" + yrlySeedCost * numCows + "\n Amount spent on water: $" + yrlyWtrCost * numCows + "\n Amount spent on power: $" + yrlyPwrCost * numCows;
+        /*document.getElementById("output").innerHTML = "It will cost you $" + totalCowPrice + " to take care of " + numCows + " cows for a year.\n Amount spent per cow: $" + yrlyCowPrice + "\n Amount spent on seeds: $" + yrlySeedCost * numCows + "\n Amount spent on water: $" + yrlyWtrCost * numCows + "\n Amount spent on power: $" + yrlyPwrCost * numCows;
+        */document.getElementById("output").innerHTML = YearPrompt;
       }
     </script>
   </head>
