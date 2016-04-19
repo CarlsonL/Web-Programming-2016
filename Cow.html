@@ -38,11 +38,11 @@ function Cow() {
         document.getElementById("output").appendChild(document.createElement("br"));
         document.getElementById("output").innerHTML += "Amount spent per cow: $" + Math.round(yrlyCowPrice*100) / 100;
         document.getElementById("output").appendChild(document.createElement("br"));
-        document.getElementById("output").innerHTML += "Amount spent on seeds: $" + Math.round((Math.round(yrlySeedCost*100) / 100) * (Math.round(numCows)));
+        document.getElementById("output").innerHTML += "Amount spent on seeds: $" + Math.round((Math.round(yrlySeedCost*100) / 100) * (Math.round(numCows)) * 100) / 100;
         document.getElementById("output").appendChild(document.createElement("br"));
-        document.getElementById("output").innerHTML += "Amount spent on water: $" + Math.round((Math.round(yrlyWtrCost*100) / 100) * (Math.round(numCows)));
+        document.getElementById("output").innerHTML += "Amount spent on water: $" + Math.round((Math.round(yrlyWtrCost*100) / 100) * (Math.round(numCows)) * 100) / 100;
         document.getElementById("output").appendChild(document.createElement("br"));
-        document.getElementById("output").innerHTML += "Amount spent on power: $" + Math.round((Math.round(yrlyPwrCost*100) / 100) * (Math.round(numCows)));
+        document.getElementById("output").innerHTML += "Amount spent on power: $" + Math.round((Math.round(yrlyPwrCost*100) / 100) * (Math.round(numCows)) * 100) / 100;
       }
     </script>
   </head>
