@@ -4,7 +4,7 @@
     <title>CowCalc</title>
     <script>
 function Cow {
-        int YearPrompt = window.prompt("What year is it?");
+        int YearPrompt = prompt("What year is it?");
         if (YearPrompt == null) {
           int days = 365.25;
         } else if ((YearPrompt % 4) == 0) {
@@ -32,7 +32,7 @@ function Cow {
         int yrlyCowPrice = yrlySeedCost + yrlyWtrCost + yrlyPwrCost;
         int totalCowPrice = yrlyCowPrice * numCows;
 
-        window.alert("It will cost you $" + totalCowPrice + " to take care of " + numCows + " cows for a year.\n Amount spent per cow: $" + yrlyCowPrice + "\n Amount spent on seeds: $" + (yrlySeedCost * numCows) + "\n Amount spent on water: $" + (yrlyWtrCost * numCows) + "\n Amount spent on power: $" + (yrlyPwrCost * numCows));
+        alert("It will cost you $" + totalCowPrice + " to take care of " + numCows + " cows for a year.\n Amount spent per cow: $" + yrlyCowPrice + "\n Amount spent on seeds: $" + (yrlySeedCost * numCows) + "\n Amount spent on water: $" + (yrlyWtrCost * numCows) + "\n Amount spent on power: $" + (yrlyPwrCost * numCows));
       }
     </script>
   </head>
