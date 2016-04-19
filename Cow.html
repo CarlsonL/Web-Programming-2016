@@ -34,7 +34,7 @@ function Cow() {
         var yrlyCowPrice = yrlySeedCost + yrlyWtrCost + yrlyPwrCost;
         var totalCowPrice = yrlyCowPrice * numCows;
 
-        document.getElementById("output").innerHTML = "It will cost you $" + totalCowPrice + " to take care of " + numCows + " cows for a year.\n Amount spent per cow: $" + yrlyCowPrice + "\n Amount spent on seeds: $" + yrlySeedCost * numCows + "\n Amount spent on water: $" + yrlyWtrCost * numCows + "\n Amount spent on power: $" + yrlyPwrCost * numCows;
+        document.getElementById("output").innerHTML = "It will cost you $" + Math.round(totalCowPrice*100) / 100 + " to take care of " + Math.round(numCows) + " cows for a year./\n/ Amount spent per cow: $" + Math.round(yrlyCowPrice*100) / 100 + "/\n/ Amount spent on seeds: $" + Math.round((Math.round(yrlySeedCost*100) / 100) * (Math.round(numCows))) + "/\n/ Amount spent on water: $" + Math.round((Math.round(yrlyWtrCost*100) / 100) * (Math.round(numCows))) + "/\n/ Amount spent on power: $" + Math.round((Math.round(yrlyPwrCost*100) / 100) * (Math.round(numCows)));
       }
     </script>
   </head>
