@@ -26,10 +26,10 @@ function Cow() {
 
         var yrlySeeds = (dlyConsume / feedPerSeed) * days;
         var yrlySeedCost = seedPrice * yrlySeeds;
-        var yrlyWater = wtrPerSeed * dlySeeds * days;
-        var yrlyWtrCost = wtrPrice * dlyWater * days;
-        var yrlyPower = pwrPerSeed * dlySeeds * days;
-        var yrlyPwrCost = pwrPrice * dlyPower * days;
+        var yrlyWater = wtrPerSeed * yrlySeeds;
+        var yrlyWtrCost = wtrPrice * yrlyWater;
+        var yrlyPower = pwrPerSeed * yrlySeeds;
+        var yrlyPwrCost = pwrPrice * yrlyPower;
 
         var yrlyCowPrice = yrlySeedCost + yrlyWtrCost + yrlyPwrCost;
         var totalCowPrice = yrlyCowPrice * numCows;
