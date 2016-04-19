@@ -1,0 +1,63 @@
+<html>
+
+  <head>
+    <title>CowCalc</title>
+    <script>
+function Cow {
+        int YearPrompt = window.prompt("What year is it?");
+        if (YearPrompt == null) {
+          int days = 365.25;
+        } else if ((YearPrompt % 4) == 0) {
+          int days = 366;
+        } else {
+          int days = 365;
+        }
+
+        int numCows = document.getElementById('cow').value;
+        int dlyConsume = document.getElementById('consume').value;
+        int pwrPerSeed = document.getElementById('power').value;
+        int wtrPerSeed = document.getElementById('water').value;
+        int seedPrice = document.getElementById('seed').value;
+        int feedPerSeed = document.getElementById('feed').value;
+        int wtrPrice = document.getElementById('waterc').value;
+        int pwrPrice = document.getElementById('powerc').value;
+
+        int yrlySeeds = (dlyConsume / feedPerSeed) * days;
+        int yrlySeedCost = seedPrice * dlySeeds * days;
+        int yrlyWater = wtrPerSeed * dlySeeds * days;
+        int yrlyWtrCost = wtrPrice * dlyWater * days;
+        int yrlyPower = pwrPerSeed * dlySeeds * days;
+        int yrlyPwrCost = pwrPrice * dlyPower * days;
+
+        int yrlyCowPrice = yrlySeedCost + yrlyWtrCost + yrlyPwrCost;
+        int totalCowPrice = yrlyCowPrice * numCows;
+
+        window.alert("It will cost you $" + totalCowPrice + " to take care of " + numCows + " cows for a year.\n Amount spent per cow: $" + yrlyCowPrice + "\n Amount spent on seeds: $" + (yrlySeedCost * numCows) + "\n Amount spent on water: $" + (yrlyWtrCost * numCows) + "\n Amount spent on power: $" + (yrlyPwrCost * numCows));
+      }
+    </script>
+  </head>
+
+  <body>
+    Cows Owned:
+    <input type="text" id="cow">
+    <br> Average amount of feed 1 cow consumes a day (kg):
+    <input type="text" id="consume">
+    <br> Power (kWh) Needed per Seed:
+    <input type="text" id="power">
+    <br> Water (Gallons) per Seed:
+    <input type="text" id="water">
+    <br> Cost of 1 kg of Seeds:
+    <input type="text" id="seed">
+    <br> Amount of Feed (kg) Yielded per kg of Seeds:
+    <input type="text" id="feed">
+    <br> Cost of 1 gal. of water:
+    <input type="text" id="waterc">
+    <br> Cost of 1 kWh of electricity:
+    <input type="text" id="powerc">
+    <br>
+
+    <button id="cowButton" onclick="Cow()">Submit</button>
+    <img src="http://i363.photobucket.com/albums/oo79/john_dxx/_bad_cow_disease121015.jpg" />
+  </body>
+
+</html>
