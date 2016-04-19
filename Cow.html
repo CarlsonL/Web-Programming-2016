@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <script type="text/javascript">
 function Cow {
-        int YearPrompt = prompt("What year is it?");
+        int YearPrompt = prompt("What year is it?", null)
         if (YearPrompt == null) {
           int days = 365.25;
         } else if ((YearPrompt % 4) == 0) {
