@@ -5,15 +5,12 @@
       <meta charset = "utf-8">
       <title>Exercise 7.16 edit</title>
       <style type="text/css">
-        table {
-          text-align: center;
-        }
+         table {
+            text-align: center;
+         }
       </style>
-   </head>
-   <body>
-      <table border="1px double">
-         <script type="text/javascript">
-      //document.writeln("<table border='1px double'>");
+      <script type="text/javascript">
+         document.writeln("<table border='1px double'>");
          var row = 0;
          var col;
         
@@ -22,23 +19,24 @@
         	   document.writeln("<tr>");
           
             while (col <= 1000) {
-          	if (row == 0) {
-            	if (col != 1) {
-              	document.writeln("<th>" + col + "*N</th>");
+               if (row === 0) {
+                  if (col != 1) {
+                     document.writeln("<th>" + col + "*N</th>");
+                  } else {
+                     document.writeln("<th>N</th>");
+                  }
                } else {
-                document.writeln("<th>N</th>");
-              }
-            } else {
-            	document.writeln("<td>" + (row * col) + "</td>");
+            	   document.writeln("<td>" + (row * col) + "</td>");
+               }
+               col *= 10;
             }
-            col *= 10;
-          }
-          
-          document.writeln("</tr>");
-          row++;
-        }
-        //document.writeln("</table>");
+            
+            document.writeln("</tr>");
+            row++;
+         }
+         
+         document.writeln("</table>");
       </script>
-      </table>
-   </body>
+   </head>
+   <body></body>
 </html>
