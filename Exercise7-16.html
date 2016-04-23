@@ -11,20 +11,21 @@
       </style>
    </head>
    <body>
-      <script type="text/javascript">
-      	document.writeln("<table border='1px double'>");
-        var row = 0;
-        var col;
+      <table border="1px double">
+         <script type="text/javascript">
+      //document.writeln("<table border='1px double'>");
+         var row = 0;
+         var col;
         
-        while (row <= 6) {
-          col = 1;
-        	document.writeln("<tr>");
+         while (row <= 6) {
+            col = 1;
+        	   document.writeln("<tr>");
           
-          while (col <= 1000) {
+            while (col <= 1000) {
           	if (row == 0) {
             	if (col != 1) {
               	document.writeln("<th>" + col + "*N</th>");
-              } else {
+               } else {
                 document.writeln("<th>N</th>");
               }
             } else {
@@ -36,7 +37,8 @@
           document.writeln("</tr>");
           row++;
         }
-        document.writeln("</table>");
+        //document.writeln("</table>");
       </script>
+      </table>
    </body>
 </html>
