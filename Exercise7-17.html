@@ -6,7 +6,7 @@
       <title>Exercise 7.17</title>
       <script type="text/javascript">
       	var counter=1;
-        var larger=0;
+        var larger=1;
         var large=0;
         var number;
         
@@ -15,6 +15,9 @@
           	number = window.prompt("Enter a number from 0-9");
           } while ((number < 0) || (number > 9) || isNaN(number));
           if (number > larger) {
+            if (larger > large) {
+               large = larger;
+            }
           	larger = number;
           } else if (number > large) {
           	large = number;
