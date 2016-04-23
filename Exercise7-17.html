@@ -13,19 +13,19 @@
          while (counter <= 10) {
             do {
                number = window.prompt("Enter a number from 0-9");
-            } while ( (number == '') || (number < 0) || (number > 9) || isNaN(number) );
-            if ( (larger == null) || (number > larger) ) {
-               if ( (larger != null) && ( (large == null) || (larger > large) ) ) {
+            } while ((number < 0) || (number > 9) || (isNaN(number)) || (number === '') );
+            if ( (larger === null) || (number > larger) ) {
+               if ( (larger !== null) && ( (large === null) || (larger > large) ) ) {
                   large = larger;
                }
                larger = number;
-            } else if ( (large == null) || ( (number > large) && (number < largest) ) ) {
+            } else if ( (large === null) || ( (number > large) && (number < largest) ) ) {
                large = number;
             }
             counter++;
          }
          
-         if (large == null) {
+         if (large === null) {
             window.alert(larger + " was the only number input.");
          }
          else {
