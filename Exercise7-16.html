@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Exercise 7.16</title>
+      <style type="text/css">
+        table {
+          text-align: center;
+        }
+      </style>
+      <script type="text/javascript">
+      	document.writeln("<table border='1px double'>");
+        var row = 0;
+        var col;
+        
+        while (row <= 6) {
+          col = 1;
+        	document.writeln("<tr>");
+          
+          while (col <= 1000) {
+          	if (row == 0) {
+            	if (col != 1) {
+              	document.writeln("<th>" + col + "*N</th>");
+              } else {
+                document.writeln("<th>N</th>");
+              }
+            } else {
+            	document.writeln("<td>" + (row * col) + "</td>");
+            }
+            col *= 10;
+          }
+          
+          document.writeln("</tr>");
+          row++;
+        }
+        document.writeln("</table>");
+      </script>
+   </head>
+   <body>
+   </body>
+</html>
