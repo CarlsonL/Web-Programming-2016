@@ -5,31 +5,32 @@
       <meta charset = "utf-8">
       <title>Exercise 7.17</title>
       <script type="text/javascript">
-        var counter=1;
-        var larger=null;
-        var large=null;
-        var number;
+         var counter=1;
+         var larger=null;
+         var large=null;
+         var number;
         
-        while (counter <= 10) {
-        	do {
-          	number = window.prompt("Enter a number from 0-9");
-          } while ( (number < 0) || (number > 9) || isNaN(number) );
-          if ( (larger == null) || (number > larger) ) {
-            if ( (larger != null) && ( (large == null) || (larger > large) ) ) {
-               large = larger;
+         while (counter <= 10) {
+            do {
+               number = window.prompt("Enter a number from 0-9");
+            } while ( (number < 0) || (number > 9) || isNaN(number) );
+            if ( (larger == null) || (number > larger) ) {
+               if ( (larger != null) && ( (large == null) || (larger > large) ) ) {
+                  large = larger;
+               }
+               larger = number;
+            } else if ( (large == null) || ( (number > large) && (number < largest) ) ) {
+               large = number;
             }
-          	larger = number;
-          } else if ( (large == null) || ( (number > large) && (number < largest) ) ) {
-          	large = number;
-          }
-          counter++;
-        }
-        if (large == null) {
-           window.alert(larger + " was the only number input.");
-        }
-        else {
-           window.alert(larger + " and " + large + " were the largest number inputs.");
-        }
+            counter++;
+         }
+         
+         if (large == null) {
+            window.alert(larger + " was the only number input.");
+         }
+         else {
+            window.alert(larger + " and " + large + " were the largest number inputs.");
+         }
       </script>
    </head>
    <body>
