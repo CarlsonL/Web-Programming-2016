@@ -12,7 +12,7 @@
         
          while (counter <= 10) {
             do {
-               number = window.prompt("Enter a number from 0-9");
+               number = (window.prompt("Enter a number from 0-9")).trim();
             } while ((number < 0) || (number > 9) || (isNaN(number)) || (number === '') );
             if ( (larger === null) || (number > larger) ) {
                if ( (larger !== null) && ( (large === null) || (larger > large) ) ) {
