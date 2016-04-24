@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Exercise 7.20</title>
+      <script type="text/javascript">
+      	var number;
+        var num2;
+        var revNum = 0;
+        var place = 10000;
+        var revPlace = 1;
+      
+      	do {
+        	number = (window.prompt("Enter a 5 digit number")).trim();
+          if ( isNaN(number) || (number.toString().length != 5) ) {
+          	window.alert("The input must be a 5 digit whole number.");
+          }
+        } while ( isNaN(number) || (number.toString().length != 5) );
+        
+        num2 = number;
+        while (num2 > 0) {
+        	revNum += ( Math.floor(num2 / place) * revPlace );
+          num2 %= place;
+          place /= 10;
+          revPlace *= 10;
+        }
+       
+        if (number == revNum) {
+        	window.alert(number + " is a palindrome!");
+        } else {
+        	window.alert(number + " is not a palindrome.");
+        }
+      </script>
+   </head>
+   <body>
+   </body>
+</html>
