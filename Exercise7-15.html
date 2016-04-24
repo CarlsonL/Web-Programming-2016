@@ -11,7 +11,7 @@
         while (counter <= 10) {
         	do {
           	number = window.prompt("Enter a number from 0-9");
-          } while ((number < 0) || (number > 9) || isNaN(number));
+          } while ( (number < 0) || (number > 9) || isNaN(number) | (number === '') );
           if (number > largest) {
           	largest = number;
           }
