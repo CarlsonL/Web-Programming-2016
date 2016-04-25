@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Exercise 7.12</title>
+      <script type="text/javascript">
+      	var account;
+        var balance;
+        var charge;
+        var credit;
+        var limit;
+        var newBal;
+        
+      	do {
+        	account = (window.prompt("Enter your account number")).trim();
+        } while ( isNaN(account) || ((account % 1) !== 0) || account === '' );
+        
+        do {
+        	balance = (window.prompt("Enter your balance as it was at the beginning of the current month.")).trim();
+          if ( isNaN(balance) || (balance % 1) !== 0 || balance === '' ) {
+          	window.alert("The input must be an integer!");
+          }
+        } while ( isNaN(balance) || (balance % 1) !== 0 || balance === '' );
+        
+        do {
+        	charge = (window.prompt("Enter the total of all items you charged this month.")).trim();
+          if ( isNaN(charge) || (charge % 1) !== 0 || charge === '' ) {
+          	window.alert("The input must be an integer!");
+          }
+        } while ( isNaN(charge) || (charge % 1) !== 0 || charge === '' );
+        
+        do {
+        	credit = (window.prompt("Enter the total of all credits you applied to your account this month.")).trim();
+          if ( isNaN(credit) || (credit % 1) !== 0 || credit === '' ) {
+          	window.alert("The input must be an integer!");
+          }
+        } while ( isNaN(credit) || (credit % 1) !== 0 || credit === '' );
+        
+        do {
+        	limit = (window.prompt("Enter your allowed credit limit.")).trim();
+          if ( isNaN(limit) || (limit % 1) !== 0 || limit === '' ) {
+          	window.alert("The input must be an integer!");
+          }
+        } while ( isNaN(limit) || (limit % 1) !== 0 || limit === '' );
+          
+        newBal = parseInt(balance) + parseInt(charge) - parseInt(credit);
+        document.writeln("<p>Your new balance is $" + newBal + ".</p>");
+        if (newBal > limit) {
+        	document.writeln("<p>Credit limit exceeded.</p>");
+        }
+      </script>
+   </head>
+   <body>
+   </body>
+</html>
