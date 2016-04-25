@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Exercise 7.13</title>
+      <script type="text/javascript">
+      	var sales = 0;
+        var earnings;
+        var items;
+        var count = 1;
+        var salesTemp;
+        
+        do {
+        	items = (window.prompt("How many items did you sell this week?")).trim();
+          if ( isNaN(items) || items === '' || (items % 1) !== 0 ) {
+          	window.alert("The input must be an integer!");
+          }
+        } while ( isNaN(items) || (items % 1) !== 0 || items === '' );
+        
+        while (count <= items) {
+        	do {
+          	salesTemp = (window.prompt("Enter cost of item " + count + ".")).trim();
+          } while ( isNaN(salesTemp) || salesTemp === '' || ((salesTemp * 100) % 1) !== 0);
+          
+          sales += parseInt(salesTemp);
+          count++;
+        }
+        
+        earnings = Math.round( (200 + (.09 * sales)) * 100 ) / 100;
+        document.writeln("<p>You earned $" + earnings + " this week.</p>");
+      </script>
+   </head>
+   <body>
+   </body>
+</html>
