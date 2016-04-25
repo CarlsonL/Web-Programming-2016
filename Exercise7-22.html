@@ -13,10 +13,10 @@
       
       do {
       	number = (window.prompt("Enter a 4 digit number")).trim();
-        if ( isNaN(number) || (number.toString().length != 4) || (number % 1) != 0 ) {
+        if ( isNaN(number) || (number.toString().length != 4) || (number % 1) !== 0 ) {
         	window.alert("The input must be a 4 digit integer.");
         }
-      } while ( isNaN(number) || (number.toString().length != 4) || (number % 1) != 0 );
+      } while ( isNaN(number) || (number.toString().length != 4) || (number % 1) !== 0 );
       
       num2 = number;
       while (num2 > 0) {
