@@ -13,10 +13,10 @@
       
       	do {
         	number = (window.prompt("Enter a 5 digit number")).trim();
-          if ( isNaN(number) || (number.toString().length != 5) ) {
+          if ( isNaN(number) || (number.toString().length != 5) || (number % 1) !== 0) ) {
           	window.alert("The input must be a 5 digit whole number.");
           }
-        } while ( isNaN(number) || (number.toString().length != 5) );
+        } while ( isNaN(number) || (number.toString().length != 5) || (number % 1) !== 0) );
         
         num2 = number;
         while (num2 > 0) {
