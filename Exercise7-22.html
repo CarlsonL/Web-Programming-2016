@@ -20,7 +20,7 @@
       
       num2 = parseInt(number);
       while (num2 > 0) {
-      	encrypt += (((Math.floor(num2 / place) + 7) % 10) * place);;
+      	encrypt += (((Math.floor(num2 / place) + 7) % 10) * place);
         num2 %= place;
         place /= 10;
       }
