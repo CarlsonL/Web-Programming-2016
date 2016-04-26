@@ -24,7 +24,6 @@
         num2 %= place;
         place /= 10;
       }
-      document.writeln("<p>"+encrypt+"</p>");
       newNum = Math.floor(encrypt / 1000) * 10;
       newNum += Math.floor((encrypt % 1000) / 100);
       newNum += Math.floor(((encrypt % 1000) % 100) / 10) * 1000;
