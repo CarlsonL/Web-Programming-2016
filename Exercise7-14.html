@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Exercise 7.12</title>
+      <script type="text/javascript">
+      	var rate;
+        var hours;
+        var gross;
+      
+      	do {
+        	rate = (window.prompt("Enter your hourly rate.")).trim();
+        } while ( isNaN(rate) || ((rate * 100) % 1) !== 0 || rate === '' );
+        
+        do {
+        	hours = (window.prompt("How many hours did you work this week?")).trim();
+          if ( isNaN(hours) || (hours % 1) !== 0 || hours === '' ) {
+          	window.alert("The input must be an integer!");
+          }
+        } while ( isNaN(hours) || (hours % 1) !== 0 || hours === '' );
+        
+        if (hours <= 40) {
+        	gross = rate * hours;
+        } else {
+        	gross = (40 * rate) + (1.5 * rate * (hours - 40));
+        }
+        
+        document.writeln("Your gross pay for this week is: $" + (Math.round(gross * 100) / 100));
+      </script>
+   </head>
+   <body>
+   </body>
+</html>
