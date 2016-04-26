@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 7.23</title>
+    <script type="text/javascript">
+    	var number;
+      var num2;
+      var decrypt = 0;
+      var newNum;
+      var place = 1000;
+      
+      do {
+      	number = (window.prompt("Enter a 4 digit number")).trim();
+        if ( isNaN(number) || (number.toString().length != 4) || (number % 1) !== 0 ) {
+        	window.alert("The input must be a 4 digit integer.");
+        }
+      } while ( isNaN(number) || (number.toString().length != 4) || (number % 1) !== 0 );
+      
+      num2 = parseInt(number);
+      while (num2 > 0) {
+      	decrypt += ( ( (Math.floor(num2 / place) + 3) % 10 ) * place );
+        num2 %= place;
+        place /= 10;
+      }
+      newNum = Math.floor(decrypt / 1000) * 10;
+      newNum += Math.floor((decrypt % 1000) / 100);
+			newNum += Math.floor(((decrypt % 1000) % 100) / 10) * 1000;
+			newNum += Math.floor(((decrypt % 1000) % 100) % 10) * 100;
+      
+      if (Math.floor(newNum / 1000) !== 0) {
+				document.writeln("<p>"+newNum+"</p>");
+			} else {
+				if (Math.floor(newNum / 100) !== 0) {
+					document.writeln("<p>0"+newNum+"</p>");
+				} else {
+					if (Math.floor(newNum / 10) !== 0) {
+						document.writeln("<p>00"+newNum+"</p>");
+					} else {
+						document.writeln("<p>000"+newNum+"</p>");
+          }   
+        }
+      }
+    </script>
+  </head>
