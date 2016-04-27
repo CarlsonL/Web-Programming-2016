@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Exercise 9.15</title>
+      <script type="text/javascript">
+     		function isEven(input) {
+        	if ((input % 2) == 0) {
+          	return true;
+          } else {
+          	return false;
+          }
+        } 
+
+      	var input;
+      	do {
+        	input = (window.prompt("Input an integer")).trim();
+          if ( isNaN(input) || (input % 1) !== 0 || input === '' ) {
+          	window.alert("The input must be an integer!");
+          }
+        } while ( isNaN(input) || (input % 1) !== 0 || input === '' );
+        
+        if (isEven(input) === true) {
+        	document.writeln("<p>"+input+" is an even number!</p>");
+        } else {
+        	document.writeln("<p>"+input+" is an odd number.</p>");
+        }
+      </script>
+   </head>
+   <body>
+ 
+   </body>
+</html>
