@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 9.29</title>
+    <script type="text/javascript">
+      var base;
+      var exponent;
+      
+      function integerPower(base, exponent) {
+        var power = 1;
+        if (exponent >= 1) {
+        	power = base * integerPower(base, exponent-1);
+        }
+        return power;
+      }
+      
+      do {
+      	base = (window.prompt("Enter a base.")).trim();
+        if ( isNaN(base) || (base % 1) !== 0 || base === '' ) {
+        	window.alert("You must input an integer!");
+        }
+      } while ( isNaN(base) || (base % 1) !== 0|| base === '' );
+      
+      do {
+      	exponent = (window.prompt("Enter an exponent of 1 or greater.")).trim();
+        if ( isNaN(exponent) || (exponent % 1) !== 0 || exponent === '' || exponent < 1 ) {
+        	if (exponent >= 1) {
+          	window.alert("You must input an integer!");
+          } else {
+          	window.alert("The exponent must be equal to 1 or greater!");
+          }
+        }
+      } while ( isNaN(exponent) || (exponent % 1) !== 0|| exponent === '' || exponent < 1);
+      
+      document.writeln(base + " to the power of " + exponent + " equals " + integerPower(base, exponent) + ".");
+		</script>
+  </head>
+  
+  <body>
+ 
+  </body>
+  
+</html>
