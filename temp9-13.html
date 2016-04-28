@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 9.13</title>
+    <script type="text/javascript">
+    	function start() {
+        document.getElementById("calculateButton").addEventListener("click", integerPower, false);
+      }
+      
+      function integerPower(x, y) {
+      	var counter = 1;
+        var z = 1;
+        
+        while (counter <= y) {
+        	z *= x;
+        }
+      }
+      
+      window.addEventListener("load", start, false);
+		</script>
+  </head>
+  
+  <body>
+    <form action="#">
+      <p><label>Base:
+        <input id="baseField" type="number"></label>
+      </p>
+      <p><label>Exponent:
+        <input id="exponentField" type="number"></label>
+      </p>
+      <p>
+        <input id="calculateButton" type="button" value="Calculate">
+      </p>
+    </form>
+  </body>
+  
+</html>
