@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 9.21</title>
+    <script type="text/javascript">
+      var heads=0;
+      var tails=0;
+    	function start() {
+      	document.getElementById("tossButton").addEventListener("click", toss, false);
+      }
+      
+      function toss() {
+        var text;
+        if (flip() === true) {
+        	heads++;
+          text = "<p>You've flipped heads " + heads + " times.<br />You've flipped tails " + tails + " times.</p>";
+        	document.getElementById("output").innerHTML = "<p>Heads</p>" + text;
+        } else {
+          tails++;
+          text = "<p>You've flipped heads " + heads + " times.<br />You've flipped tails " + tails + " times.</p>";
+          document.getElementById("output").innerHTML = "<p>Tails</p>" + text;
+        }
+        
+      }
+      
+      function flip() {
+      	if (Math.floor(1 + Math.random() * 2) == 1) {
+        	return true;
+        } else {
+        	return false;
+        }
+      }
+      
+      window.addEventListener("load", start, false);
+    </script>
+  </head>
+  
+  <body>
+    <form action="#">
+      <p>
+        <input id="tossButton" type="button" value="Toss">
+      </p>
+    </form>
+    <div id="output"></div>
+  </body>
+  
+</html>
