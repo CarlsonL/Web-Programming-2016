@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 9.13</title>
+    <script type="text/javascript">
+   
+    	function start() {
+        document.getElementById("calculateButton").addEventListener("click", function() {
+          integerPower(document.getElementById("baseField").value, document.getElementById("exponentField").value);
+        }, false);
+      }
+      
+      function integerPower(base, exponent) {
+      	var counter = 1;
+        var power = 1;
+        
+        while (counter <= exponent) {
+        	power *= base;
+          counter++;
+        }
+        if ( (base % 1) !== 0 || (exponent % 1) !== 0 || base === '' || exponent === '' ) {
+        	document.getElementById("output").innerHTML = "You must input an integer!";
+        } else {
+        	document.getElementById("output").innerHTML = power;
+        }
+      }
+      
+      window.addEventListener("load", start, false);
+		</script>
+  </head>
+  
+  <body>
+    <form action="#">
+      <p><label>Base:
+        <input id="baseField" type="number"></label>
+      </p>
+      <p><label>Exponent:
+        <input id="exponentField" type="number"></label>
+      </p>
+      <p>
+        <input id="calculateButton" type="button" value="Calculate">
+      </p>
+    </form>
+    <p id="output"></p>
+  </body>
+  
+</html>
