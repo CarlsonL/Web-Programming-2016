@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 7.23</title>
+    <script type="text/javascript">
+      function minimum3(num1, num2, num3) {
+        return Math.min(num1, Math.min(num2, num3));
+      }
+    
+      var num1;
+      var num2;
+      var num3;
+      
+      do {
+        num1 = (window.prompt("Enter first number")).trim();
+      } while ( isNaN(num1) || num1 === '');
+      do {
+      	num2 = (window.prompt("Enter second number")).trim();
+      } while ( isNaN(num2) || num2 === '');
+      do {
+      	num3 = (window.prompt("Enter third number")).trim();
+      } while ( isNaN(num3) || num3 === '');
+      
+      document.writeln("Smallest number is " + minimum3(num1, num2, num3) + ".");
+      
+    </script>
+  </head>
+  
+  <body>
+  
+  </body>
+  
+</html>
