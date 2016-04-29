@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 9.16</title>
+    <script type="text/javascript">
+    	var number;
+    	
+   		function displayDigits(a) {
+  			var b;
+  			var c;
+  			
+        if ( (a / 10000) >= 1 ) {
+        	b = 10000;
+        } else if ( (a / 1000) >= 1 ) {
+        	b = 1000;
+        } else if ( (a / 100) >= 1 ) {
+          b = 100;
+        } else if ( (a / 10) >= 1) {
+          b = 10;
+        } else {
+        	b = 1;
+        }
+        
+        while (a > 0) {
+    			c = Math.floor(a / b);
+      		document.writeln("&nbsp;" + c + "&nbsp;");
+    			a = a % b;
+    			b /= 10;
+  			}
+			}
+      
+      do {
+      	number = (window.prompt("Enter an integer between 1 and 99999")).trim();
+        if ( number === '' || (number % 1) !== 0 || isNaN(number) || number < 1 || number > 99999 ) {
+        	window.alert("You must input an integer between 1 and 99999");
+        }
+      } while ( number === '' || (number % 1) !== 0 || isNaN(number) || number < 1 || number > 99999 );
+      
+      displayDigits(number);
+		</script>
+  </head>
+  
+  <body>
+    
+  </body>
+  
+</html>
