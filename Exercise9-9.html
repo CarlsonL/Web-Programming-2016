@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 9.9</title>
+    <script type="text/javascript">
+    function start() {
+    	document.getElementById("calculateButton").addEventListener("click", distance, false);
+    }
+    
+    function distance() {
+    	var x1 = parseFloat(document.getElementById("x1Field").value);
+      var y1 = parseFloat(document.getElementById("y1Field").value);
+      var x2 = parseFloat(document.getElementById("x2Field").value);
+      var y2 = parseFloat(document.getElementById("y2Field").value);
+      var d = Math.sqrt( Math.pow( (x2 - x1), 2 ) + Math.pow( (y2 - y1), 2 ) );
+      
+      document.getElementById("output").innerHTML = "The distance between &#40;"+x1+","+y1+"&#41; and &#40;"+x2+","+y2+"&#41; is " + d + ".";
+    }
+    
+    window.addEventListener("load", start, false);
+    </script>
+  </head>
+  
+  <body>
+    <form action="#">
+      <p><label>X<sub>1</sub>:
+        <input id="x1Field" type="number"></label>
+        <label>Y<sub>1</sub>:
+        <input id="y1Field" type="number"></label>
+      </p>
+      <p><label>X<sub>2</sub>:
+        <input id="x2Field" type="number"></label>
+        <label>Y<sub>2</sub>:
+        <input id="y2Field" type="number"></label>
+      </p>
+      <p>
+      <input id="calculateButton" type="button" value="Calculate">
+      </p>
+    </form>
+    <p id="output"></p>
+  </body>
+  
+</html>
