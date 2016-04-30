@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 9.8</title>
+    <script type="text/javascript">
+    	function start() {
+        document.getElementById("calculateButton").addEventListener("click", calculateCharges, false);
+      }
+      
+      function calculateCharges() {
+      	var hours = document.getElementById("hoursField").value;
+        var charge;
+        if (hours > 0 && hours <= 24) {
+        	if (hours <= 3) {
+          	charge = 2;
+          } else {
+          	charge = 2 + (.5 * (hours - 3));
+          }
+          if (charge > 10) {
+        		charge = 10;
+        	}
+          totalCharges += charge;
+          document.getElementById("output").innerHTML = "The charge for this customer: $" + charge + "<br />" + "The total of yesterday's receipts: $" + totalCharges;
+        }
+      }
+      
+      var totalCharges = 0;
+      window.addEventListener("load", start, false);
+		</script>
+  </head>
+  
+  <body>
+    <form action="#">
+      <p><label>Hours customer was parked:
+        <input id="hoursField" type="number"></label>
+        <input id="calculateButton" type="button" value="Calculate">
+      </p>
+    </form>
+    <p id="output"></p>
+  </body>
+  
+</html>
