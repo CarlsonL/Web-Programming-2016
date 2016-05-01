@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 9.19.c</title>
+    <script type="text/javascript">
+    function primality(n) {
+    	var i = 2;
+      var prime = false;
+      
+      if (n >= 2) {
+      	prime = true;
+        
+      	while (i <= Math.sqrt(n)) {
+      		if ((n % i) === 0) {
+        		prime = false;
+        	}
+          i++;
+      	}
+        
+      }
+      return prime;
+    }
+    
+    document.writeln("<textarea id='output' rows='63' cols='99'></textarea>");
+    var num = 2;
+    var counter = 0;
+    while (num <= 10000) {
+    	if (primality(num) === true) {
+      	document.getElementById("output").value += (num + " ");
+        counter++;
+      }
+      if (num >= 3) {
+      	num += 2;
+      } else {
+      	num++;
+      }
+    }
+		</script>
+  </head>
+  
+  <body>
+  </body>
+  
+</html>
