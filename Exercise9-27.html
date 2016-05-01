@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 9.27</title>
+    <script type="text/javascript">
+    	function start() {
+        num1 = Math.floor(1 + Math.random() * (Math.pow(10,grade) - 1) );
+      	num2 = Math.floor(1 + Math.random() * (Math.pow(10,grade) - 1) );
+        if (problems == 5) {
+        	problems2 = Math.floor(1 + Math.random() * 4);
+        } else {
+        	problems2 = parseInt(problems);
+        }
+        switch (problems2) {
+          	case 1:
+            	document.getElementById("question").innerHTML = "How much is " + num1 + " plus " + num2 + "?";
+              break;
+            case 2:
+            	document.getElementById("question").innerHTML = "How much is " + num1 + " minus " + num2 + "?";
+              break;
+            case 3:
+            	document.getElementById("question").innerHTML = "How much is " + num1 + " times " + num2 + "?";
+              break;
+            case 4:
+            	document.getElementById("question").innerHTML = "How much is " + num1 + " divided by " + num2 + "? &lpar;Round answers to the nearest hundredth&rpar;";
+              break;
+          }
+        document.getElementById("submitButton").addEventListener("click", evaluate, false);
+    	}
+      
+      function evaluate() {
+        var response = Math.floor(1+ Math.random() * 4);
+      	var answer = document.getElementById("answerField").value;
+        switch (problems2) {
+          	case 1:
+            	if (answer == (num1 + num2)) {
+        				correct++;
+          			switch (response) {
+          				case 1:
+            				document.getElementById("output").innerHTML = "Very good!";
+              			break;
+            			case 2:
+            				document.getElementById("output").innerHTML = "Excellent!";
+              			break;
+            			case 3:
+            				document.getElementById("output").innerHTML = "Nice work!";
+              			break;
+            			case 4:
+            				document.getElementById("output").innerHTML = "Keep up the good work!";
+              			break;
+          			}
+          			if ((correct + incorrect) == 10) {
+        					if ((correct / 10) < .75) {
+          					document.getElementById("output").innerHTML = "Please ask you instructor for help.";
+          				}
+            			correct = 0;
+            			incorrect = 0;
+          			}
+          			start();
+        			} else {
+        				incorrect++;
+        				switch (response) {
+          				case 1:
+            				document.getElementById("output").innerHTML = "No. Please try again.";
+              			break;
+            			case 2:
+            				document.getElementById("output").innerHTML = "Wrong. Try once more";
+              			break;
+            			case 3:
+            				document.getElementById("output").innerHTML = "Don't give up!";
+              			break;
+            			case 4:
+            				document.getElementById("output").innerHTML = "No. Keep trying.";
+              			break;
+          				}
+          			if ((correct + incorrect) == 10) {
+        					if ((correct / 10) < .75) {
+          					document.getElementById("output").innerHTML = "Please ask your instructor for help.";
+              			correct = 0;
+            				incorrect = 0;
+              			start();
+          				}
+            			correct = 0;
+            			incorrect = 0;
+          			}
+        			}
+            	break;
+            case 2:
+            	if (answer == (num1 - num2)) {
+        				correct++;
+          			switch (response) {
+          				case 1:
+            				document.getElementById("output").innerHTML = "Very good!";
+              			break;
+            			case 2:
+            				document.getElementById("output").innerHTML = "Excellent!";
+              			break;
+            			case 3:
+            				document.getElementById("output").innerHTML = "Nice work!";
+              			break;
+            			case 4:
+            				document.getElementById("output").innerHTML = "Keep up the good work!";
+              			break;
+          			}
+          			if ((correct + incorrect) == 10) {
+        					if ((correct / 10) < .75) {
+          					document.getElementById("output").innerHTML = "Please ask you instructor for help.";
+          				}
+            			correct = 0;
+            			incorrect = 0;
+          			}
+          			start();
+        			} else {
+        				incorrect++;
+        				switch (response) {
+          				case 1:
+            				document.getElementById("output").innerHTML = "No. Please try again.";
+              			break;
+            			case 2:
+            				document.getElementById("output").innerHTML = "Wrong. Try once more";
+              			break;
+            			case 3:
+            				document.getElementById("output").innerHTML = "Don't give up!";
+              			break;
+            			case 4:
+            				document.getElementById("output").innerHTML = "No. Keep trying.";
+              			break;
+          				}
+          			if ((correct + incorrect) == 10) {
+        					if ((correct / 10) < .75) {
+          					document.getElementById("output").innerHTML = "Please ask your instructor for help.";
+              			correct = 0;
+            				incorrect = 0;
+              			start();
+          				}
+            			correct = 0;
+            			incorrect = 0;
+          			}
+        			}
+              break;
+            case 3:
+            	if (answer == (num1 * num2)) {
+        				correct++;
+          			switch (response) {
+          				case 1:
+            				document.getElementById("output").innerHTML = "Very good!";
+              			break;
+            			case 2:
+            				document.getElementById("output").innerHTML = "Excellent!";
+              			break;
+            			case 3:
+            				document.getElementById("output").innerHTML = "Nice work!";
+              			break;
+            			case 4:
+            				document.getElementById("output").innerHTML = "Keep up the good work!";
+              			break;
+          			}
+          			if ((correct + incorrect) == 10) {
+        					if ((correct / 10) < .75) {
+          					document.getElementById("output").innerHTML = "Please ask you instructor for help.";
+          				}
+            			correct = 0;
+            			incorrect = 0;
+          			}
+          			start();
+        			} else {
+        				incorrect++;
+        				switch (response) {
+          				case 1:
+            				document.getElementById("output").innerHTML = "No. Please try again.";
+              			break;
+            			case 2:
+            				document.getElementById("output").innerHTML = "Wrong. Try once more";
+              			break;
+            			case 3:
+            				document.getElementById("output").innerHTML = "Don't give up!";
+              			break;
+            			case 4:
+            				document.getElementById("output").innerHTML = "No. Keep trying.";
+              			break;
+          				}
+          			if ((correct + incorrect) == 10) {
+        					if ((correct / 10) < .75) {
+          					document.getElementById("output").innerHTML = "Please ask your instructor for help.";
+              			correct = 0;
+            				incorrect = 0;
+              			start();
+          				}
+            			correct = 0;
+            			incorrect = 0;
+          			}
+        			}
+              break;
+            case 4:
+            	if (answer == (Math.floor((num1 / num2) * 100) / 100)) {
+        				correct++;
+          			switch (response) {
+          				case 1:
+            				document.getElementById("output").innerHTML = "Very good!";
+              			break;
+            			case 2:
+            				document.getElementById("output").innerHTML = "Excellent!";
+              			break;
+            			case 3:
+            				document.getElementById("output").innerHTML = "Nice work!";
+              			break;
+            			case 4:
+            				document.getElementById("output").innerHTML = "Keep up the good work!";
+              			break;
+          			}
+          			if ((correct + incorrect) == 10) {
+        					if ((correct / 10) < .75) {
+          					document.getElementById("output").innerHTML = "Please ask you instructor for help.";
+          				}
+            			correct = 0;
+            			incorrect = 0;
+          			}
+          			start();
+        			} else {
+        				incorrect++;
+        				switch (response) {
+          				case 1:
+            				document.getElementById("output").innerHTML = "No. Please try again.";
+              			break;
+            			case 2:
+            				document.getElementById("output").innerHTML = "Wrong. Try once more";
+              			break;
+            			case 3:
+            				document.getElementById("output").innerHTML = "Don't give up!";
+              			break;
+            			case 4:
+            				document.getElementById("output").innerHTML = "No. Keep trying.";
+              			break;
+          				}
+          			if ((correct + incorrect) == 10) {
+        					if ((correct / 10) < .75) {
+          					document.getElementById("output").innerHTML = "Please ask your instructor for help.";
+              			correct = 0;
+            				incorrect = 0;
+              			start();
+          				}
+            			correct = 0;
+            			incorrect = 0;
+          			}
+        			}
+              break;
+        }
+      }
+      var num1;
+      var num2;
+      var correct = 0;
+      var incorrect = 0;
+      var grade;
+      var problems;
+      var problems2;
+      
+      do {
+      	grade = (window.prompt("Enter a difficulty level between 1 and 6")).trim();
+        if ( isNaN(grade) || (grade % 1) !== 0 || grade === '' || grade < 1 || grade > 6 ) {
+        	window.alert("You must input an integer between 1 and 6!");
+        }
+      } while ( isNaN(grade) || (grade % 1) !== 0 || grade === '' || grade < 1 || grade > 6 );
+      
+      do {
+      	problems = (window.prompt(
+        "What type of problems do you wish to study?\n1=Addition\n2=Subtraction\n3=Multiplication\n4=Division\n5=Varied"
+        )).trim();
+        if ( isNaN(problems) || (problems % 1) !== 0 || problems === '' || problems < 1 || problems > 5 ) {
+        	window.alert("You must input an integer between 1 and 5!");
+        }
+      } while ( isNaN(problems) || (problems % 1) !== 0 || problems === '' || problems < 1 || problems > 5 );
+      
+      window.addEventListener("load", start, false);
+		</script>
+  </head>
+  
+  <body>
+    <form action="#">
+      <p>
+        <label id="question"></label>
+        <br />
+        <input id="answerField" type="number">
+        <input id="submitButton" type="button" value="Submit">
+      </p>
+    </form>
+    <p id="output"></p>
+  </body>
+  
+</html>
