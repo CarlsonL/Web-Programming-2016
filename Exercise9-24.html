@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 9.24</title>
+    <script type="text/javascript">
+    	function start() {
+        num1 = Math.floor(1 + Math.random() * 10);
+      	num2 = Math.floor(1 + Math.random() * 10);
+      	document.getElementById("question").innerHTML = "How much is " + num1 + " times " + num2 + "?";
+        document.getElementById("submitButton").addEventListener("click", evaluate, false);
+    	}
+      
+      function evaluate() {
+        var response = Math.floor(1+ Math.random() * 4);
+      	var answer = document.getElementById("answerField").value;
+        if (answer == (num1 * num2)) {
+        	correct++;
+          switch (response) {
+          	case 1:
+            	document.getElementById("output").innerHTML = "Very good!";
+              break;
+            case 2:
+            	document.getElementById("output").innerHTML = "Excellent!";
+              break;
+            case 3:
+            	document.getElementById("output").innerHTML = "Nice work!";
+              break;
+            case 4:
+            	document.getElementById("output").innerHTML = "Keep up the good work!";
+              break;
+          }
+          if ((correct + incorrect) == 10) {
+        		if ((correct / 10) < .75) {
+          		document.getElementById("output").innerHTML = "Please ask you instructor for help.";
+          	}
+            correct = 0;
+            incorrect = 0;
+          }
+          start();
+        } else {
+        	incorrect++;
+        	switch (response) {
+          	case 1:
+            	document.getElementById("output").innerHTML = "No. Please try again.";
+              break;
+            case 2:
+            	document.getElementById("output").innerHTML = "Wrong. Try once more";
+              break;
+            case 3:
+            	document.getElementById("output").innerHTML = "Don't give up!";
+              break;
+            case 4:
+            	document.getElementById("output").innerHTML = "No. Keep trying.";
+              break;
+          }
+          if ((correct + incorrect) == 10) {
+        		if ((correct / 10) < .75) {
+          		document.getElementById("output").innerHTML = "Please ask your instructor for help.";
+              correct = 0;
+            	incorrect = 0;
+              start();
+          	}
+            correct = 0;
+            incorrect = 0;
+          }
+        }
+      }
+      var num1;
+      var num2;
+      var correct = 0;
+      var incorrect = 0;
+      window.addEventListener("load", start, false);
+		</script>
+  </head>
+  
+  <body>
+    <form action="#">
+      <p>
+        <label id="question"></label>
+        <br />
+        <input id="answerField" type="number">
+        <input id="submitButton" type="button" value="Submit">
+      </p>
+    </form>
+    <p id="output"></p>
+  </body>
+  
+</html>
