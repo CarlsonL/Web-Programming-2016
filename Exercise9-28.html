@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Exercise 9.28</title>
+      <style type = "text/css">
+         p.red  { color: red }
+         img    { width: 54px; height: 54px; }
+         div    { border: 5px ridge royalblue; 
+                  padding: 10px; width: 120px; 
+                  margin-bottom: 10px; }
+         .point { margin: 0px; }
+      </style>
+      <script>
+         var pointDie1Img;
+         var pointDie2Img;
+         var rollDie1Img;
+         var rollDie2Img;
+         var messages;
+         var playButton;
+         var rollButton;
+         var dicerolling;
+
+         var myPoint;
+         var die1Value;
+         var die2Value;
+         var bankBalance = 1000;
+         var line;
+         var wager;
+         
+         function betting() {
+         	do {
+          	wager = (window.prompt("Enter a wager.")).trim();
+            if ( isNaN(wager) || ((wager * 100) % 1) !== 0 || wager === '' || wager > bankBalance || wager < 1) {
+            	if (wager > bankBalance) {
+              	window.alert("You don't have enough money!");
+              }
+              if (wager < 1) {
+                window.alert("Minimum bet is 1 dollar.");
+              }
+            }
+          } while ( isNaN(wager) || ((wager * 100) % 1) !== 0 || wager === '' || wager > bankBalance || wager < 1);
+          startGame();
+         }
+
+         function startGame() 
+         {
+            dicerolling = document.getElementById( "dicerolling" );
+            pointDie1Img = document.getElementById( "pointDie1" );
+            pointDie2Img = document.getElementById( "pointDie2" );
+            rollDie1Img = document.getElementById( "rollDie1" );
+            rollDie2Img = document.getElementById( "rollDie2" );
+            messages = document.getElementById( "messages" );
+            playButton = document.getElementById( "play" );
+            rollButton = document.getElementById( "roll" );
+
+            rollButton.disabled = true; // disable rollButton
+            setImage( pointDie1Img ); // reset image for new game
+            setImage( pointDie2Img ); // reset image for new game
+            setImage( rollDie1Img ); // reset image for new game
+            setImage( rollDie2Img ); // reset image for new game
+
+            myPoint = 0;
+            firstRoll();
+         }
+
+         function firstRoll()
+         {
+            var sumOfDice = rollDice(); // first roll of the dice
+
+            switch (sumOfDice) 
+            {
+               case 7: case 11:
+                  bankBalance += parseFloat(wager);
+                  messages.innerHTML = 
+                     "You Win!!! Click Play to play again.<br />New balance is $"+bankBalance;
+                  break;
+               case 2: case 3: case 12:
+                  bankBalance -= parseFloat(wager);
+                  messages.innerHTML = 
+                     "Sorry. You Lose. Click Play to play again.<br />New balance is $"+bankBalance;
+                  if (bankBalance === 0) {
+                  	messages.innerHTML += "<br /> Sorry. You busted!"
+                  }
+                  break;
+               default:
+                  myPoint = sumOfDice;
+                  setImage( pointDie1Img, die1Value );
+                  setImage( pointDie2Img, die2Value );
+                  messages.innerHTML = "Roll Again!";
+                  rollButton.disabled = false;
+                  playButton.disabled = true;
+                  break;
+            }
+         }
+
+         function rollAgain()
+         {
+            var sumOfDice = rollDice();
+
+            if (sumOfDice == myPoint) 
+            {
+               bankBalance += parseFloat(wager);
+               messages.innerHTML =
+                  "You Win!!! Click Play to play again.<br />New balance is $"+bankBalance;
+               rollButton.disabled = true;
+               playButton.disabled = false;
+            }
+            else if (sumOfDice == 7)
+            {
+               bankBalance -= parseFloat(wager);
+               messages.innerHTML = 
+                  "Sorry. You Lose. Click Play to play again.<br />New balance is $"+bankBalance;
+               if (bankBalance === 0) {
+                  	messages.innerHTML += "<br /> Sorry. You busted!"
+               }
+               rollButton.disabled = true;
+               playButton.disabled = false;
+            }
+         }
+
+         function rollDice() 
+         {
+            dicerolling.play();
+            
+            chatter();
+
+            die1Value = NaN;
+            die2Value = NaN;
+            showDice();
+	    
+            die1Value = Math.floor(1 + Math.random() * 6);
+            die2Value = Math.floor(1 + Math.random() * 6);
+            return die1Value + die2Value;
+         }
+
+         function showDice()
+         {
+            setImage( rollDie1Img, die1Value );
+            setImage( rollDie2Img, die2Value );
+         }
+
+         function setImage( dieImg, dieValue ) 
+         {
+            if ( isFinite( dieValue ) )
+               dieImg.src = "ch09/die" + dieValue + ".png?raw=true";
+            else
+               dieImg.src = "ch09/blank.png?raw=true";
+         }
+
+         function start()
+         {
+            var playButton = document.getElementById( "play" );
+            playButton.addEventListener( "click", betting, false );
+            var rollButton = document.getElementById( "roll" );
+            rollButton.addEventListener( "click", rollAgain, false );
+            var diceSound = document.getElementById( "dicerolling" );
+            diceSound.addEventListener( "ended", showDice, false );
+         }
+         
+         function chatter() {
+         	line = Math.floor(1 + Math.random() * 3);
+          switch (line) {
+          	case 1:
+            	messages.innerHTML = "Oh, you're going for broke, huh?";
+              break;
+            case 2:
+              messages.innerHTML = "Aw c'mon, take a chance!";
+              break;
+            case 3:
+              messages.innerHTML = "You're up big. Now's the time to cash in your chips!";
+              break;
+          }
+         }
+
+         window.addEventListener( "load", start, false );
+      </script>
+   </head>
+   <body>
+      <audio id = "dicerolling" preload = "auto">
+         <source src = "http://test.deitel.com/dicerolling.mp3"
+            type = "audio/mpeg">
+         <source src = "http://test.deitel.com/dicerolling.ogg"
+            type = "audio/ogg">
+         Browser does not support audio tag</audio>
+      <p><a href = "ch09/CrapsRules.html">Click here for a short video
+         explaining the basic Craps rules</a></p>
+      <div id = "pointDiv">
+         <p class = "point">Point is:</p>
+         <img id = "pointDie1" src = "ch09/blank.png?raw=true"  
+            alt = "Die 1 of Point Value">
+         <img id = "pointDie2" src = "ch09/blank.png?raw=true"
+            alt = "Die 2 of Point Value">
+      </div>
+      <div class = "rollDiv">
+         <img id = "rollDie1" src = "ch09/blank.png?raw=true" 
+            alt = "Die 1 of Roll Value">
+         <img id = "rollDie2" src = "ch09/blank.png?raw=true" 
+            alt = "Die 2 of Roll Value">
+      </div>
+      <form action = "#">
+         <input id = "play" type = "button" value = "Play">
+         <input id = "roll" type = "button" value = "Roll" disabled>
+      </form>
+      <p id = "messages" class = "red">Click Play to start the game</p>
+   </body>
+</html>
